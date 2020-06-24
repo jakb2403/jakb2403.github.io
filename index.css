@@ -32,6 +32,53 @@ body {
     0% {transform: rotate(0deg);}
     100% {transform: rotate(360deg);}
 }
+
+
+.loading-bounce {
+    width: 90px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    right: 45%;
+    top: 50%;
+  }
+  
+  .loading-bounce .bounce-ball {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: #00f1ca;
+    animation: rotate 0.56s infinite linear;
+    animation-name: bouncing;
+    animation-duration: 0.4s;
+    animation-timing-function: cubic-bezier(0.6, 0.05, 0.15, 0.95);
+    animation-direction: alternate;
+    animation-iteration-count: infinite;
+    /* animation: bouncing 0.4s alternate infinite cubic-bezier(0.6, 0.05, 0.15, 0.95); */
+  }
+  
+  .loading-bounce .bounce-ball:nth-child(2) {
+    animation-delay: 0.1s;
+    animation-fill-mode: both;
+  }
+  .loading-bounce .bounce-ball:nth-child(3) {
+    
+    animation-delay: 0.2s;
+    animation-fill-mode: both;
+  }
+  
+  @keyframes bouncing {
+    0% {
+      transform: translate3d(0, 10px, 0) scale(1.2, 0.85);
+    }
+  
+    100% {
+      transform: translate3d(0, -20px, 0) scale(0.9, 1.1);
+    }
+  }
+
+
 header {
     width:92vw;
     padding:6vh 4vw;
@@ -202,7 +249,7 @@ header table {
 }
 #bio h1 {
     padding:5px 0px;
-    border-bottom:4px solid #454d66;
+    border-bottom:4px solid #309975;
     width:8%;
 }
 #contact {
@@ -211,7 +258,7 @@ header table {
 }
 #contact h1 {
     padding:5px 0px;
-    border-bottom:4px solid #454d66;
+    border-bottom:4px solid #309975;
     width:10%;
 }
 #contact table {
